@@ -96,6 +96,10 @@ import java.util.List;
  * {@sample development/samples/Support13Demos/src/com/example/android/supportv13/app/ActionBarTabsPager.java
  *      complete}
  */
+
+/**
+ * 自己实现的兼容3.0以下版本的ViewPager类
+ */
 public class ViewPagerCompat extends ViewGroup {
     private static final String TAG = "ViewPager";
     private static final boolean DEBUG = false;
