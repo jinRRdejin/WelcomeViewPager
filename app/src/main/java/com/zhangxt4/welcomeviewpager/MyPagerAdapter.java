@@ -14,13 +14,14 @@ import java.util.List;
 public class MyPagerAdapter extends PagerAdapter {
 
     private MyViewPager mViewPager;
-    private List<ImageView> mImgViews;
+//    private List<ImageView> mImgViews;
     private int[] mImgIds;
     private Context mContext;
 
-    public MyPagerAdapter(MyViewPager viewPager, List<ImageView> imgViews, int[] imgIds, Context context) {
+//    public MyPagerAdapter(MyViewPager viewPager, List<ImageView> imgViews, int[] imgIds, Context context) {
+    public MyPagerAdapter(MyViewPager viewPager, int[] imgIds, Context context) {
         this.mViewPager = viewPager;
-        this.mImgViews = imgViews;
+//        this.mImgViews = imgViews;
         this.mImgIds = imgIds;
         this.mContext = context;
     }
@@ -31,14 +32,14 @@ public class MyPagerAdapter extends PagerAdapter {
         imageView.setImageResource(mImgIds[position]);
         imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
         container.addView(imageView);
-        mImgViews.add(imageView);
+//        mImgViews.add(imageView);
         mViewPager.setViewForPosition(imageView, position);
         return imageView;
     }
 
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
-        container.removeView(mImgViews.get(position));
+        container.removeView((View) object);
         mViewPager.removeViewFromPosition(position);
     }
 
